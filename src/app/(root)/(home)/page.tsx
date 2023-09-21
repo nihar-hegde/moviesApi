@@ -1,8 +1,21 @@
 import Filters from '@/components/Filters'
+import PopularMovies from '@/components/PopularMovies'
 import SearchForm from '@/components/SearchForm'
+import TopRatedMovies from '@/components/TopRatedMovies'
+import UpcomingMovies from '@/components/UpcomingMovies'
+import { getMovies } from '@/lib/getMovies'
+
+import axios from 'axios'
 import React from 'react'
 
-const Page = () => {
+
+const Page = async () => {
+  // teting to be deleted
+  const popularMovies = await getMovies("popular");
+  const topRatedMovies = await getMovies("top_rated");
+  const upcomingMovies = await getMovies("upcoming");
+  // Testing to be deleted
+  
   return (
     <>
     <main className='flex-center paddings mx-auto w-full max-w-screen-2xl flex-col'>
@@ -13,7 +26,13 @@ const Page = () => {
         <SearchForm/>
       </section>
       <Filters/>
-
+      {/* Testing to be deleted */}
+      <div className="w-[1300px] max-w-full px-4 mx-auto">
+        <UpcomingMovies upcomingMovies={upcomingMovies} />
+        <PopularMovies popularMovies={popularMovies} />
+        <TopRatedMovies topRatedMovies={topRatedMovies} />
+      </div>
+      {/* Testing to be deleted */}
     </main>
     </>
   )

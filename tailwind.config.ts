@@ -83,7 +83,7 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-  ],
+      ],
   theme: {
     screens: {
       xs: "400px",
@@ -149,5 +149,7 @@ module.exports = {
       },
     },
   },
+  
   plugins: [require("tailwindcss-animate")],
+
 };
